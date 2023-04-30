@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Counter, { CounterContext } from './Counter';
+import { Button } from '@mui/material';
 
 
 const IncrementButton = () => {
@@ -9,7 +10,7 @@ const IncrementButton = () => {
   const localizedStrings = useContext(LocalizedStringsContext);
   
   return (
-    <button type="button" onClick={increment}>{localizedStrings[0]}</button>
+    <Button type="button" variant="contained" onClick={increment}>{localizedStrings[0]}</Button>
   )
 }
 
@@ -18,7 +19,7 @@ const DecrementButton = () => {
   const localizedStrings = useContext(LocalizedStringsContext);
 
   return (
-    <button type="button" onClick={decrement}>{localizedStrings[1]}</button>
+    <Button type="button" variant="text" onClick={decrement}>{localizedStrings[1]}</Button>
   )
 }
 
