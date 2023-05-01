@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Counter, { CounterContext } from './Counter';
 import { Button } from '@mui/material';
+import LocalizedStringsContext from './LocalizedStringsContext';
 
 
 const IncrementButton = () => {
@@ -22,10 +23,7 @@ const DecrementButton = () => {
     <Button type="button" variant="text" onClick={decrement}>{localizedStrings[1]}</Button>
   )
 }
-
-
-let defaultStrings:string[] = [];
-const LocalizedStringsContext = createContext(defaultStrings); 
+ 
 
 const App = () => {
   const [localizedStrings] = useState(['Increment', 'Decrement']);
