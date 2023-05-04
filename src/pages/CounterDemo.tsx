@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Counter, { CounterContext } from './Counter';
+import Counter, { CounterContext } from '../components/Counter';
 import { Button } from '@mui/material';
-import LocalizedStringsContext from './LocalizedStringsContext';
+import LocalizedStringsContext from '../LocalizedStringsContext';
 
 
 const IncrementButton = () => {
@@ -25,17 +24,14 @@ const DecrementButton = () => {
 }
  
 
-const App = () => {
+const CounterDemo = () => {
   const [localizedStrings] = useState(['Increment', 'Decrement']);
 
   return (
     <LocalizedStringsContext.Provider value={localizedStrings}>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
+          <h1>Demo - Counter</h1>
           <Counter>
             <IncrementButton></IncrementButton>
             <DecrementButton></DecrementButton>
@@ -46,4 +42,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default CounterDemo;
